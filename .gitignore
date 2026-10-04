@@ -1,0 +1,9 @@
+# Složka s datasetem (rosbag)
+V1_02_medium/
+
+# Soubory řešení a konfigurace RVizu
+solution.py
+solution_conf.rviz
+
+# Volitelně: vygenerované CSV výstupy
+*.csv
