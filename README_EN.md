@@ -71,19 +71,15 @@ Your task is to complete the Python template (`node_template.py`), which behaves
 
 #### 📋 List of Tasks (TODO) in the Code:
 
-1. **Import messages:** Import the correct message type according to the topic in the dataset (e.g. `PoseStamped` or `Odometry`).
+1. **CSV header:** Define and write the column names in the CSV file (`timestamp`, `x`, `y`, `z`).
 
-2. **CSV header:** Define the column names in the CSV file (`timestamp`, `x`, `y`, `z`).
+2. **Subscriber:** Uncomment and configure `self.create_subscription()` with the correct message type (`TransformStamped`) and topic name (`/vicon/firefly_sbx/firefly_sbx`).
 
-3. **Subscriber:** Uncomment and configure `self.create_subscription()` with the correct message type and topic name.
+3. **Timer:** Create and configure `self.create_timer()` with a period of `0.1` s (10 Hz) and set its callback to `self.timer_callback`.
 
-4. **Timer:** Uncomment and configure `self.create_timer()` with a period of `0.1` s (10 Hz).
+4. **Extract data in timer callback (`timer_callback`):** Extract the timestamp and position coordinates X, Y, Z (`transform.translation`) from `self.latest_msg`.
 
-5. **Subscriber callback (**`**pose_callback**`**):** Store the received message in the variable `self.latest_msg`.
-
-6. **Timer callback (**`**timer_callback**`**):** Extract the timestamp and X, Y, Z positions from the message.
-
-7. **Write to CSV:** Write the extracted values as a new row in the CSV file.
+5. **Write to CSV:** Write the extracted values as a new row into the CSV file using `self.writer.writerow([...])`.
 
 #### 🚀 Running the Script
 

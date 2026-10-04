@@ -60,7 +60,7 @@ https://docs.ros.org/en/humble/Installation.html
 
 Stáhni si připravený dataset, který obsahuje reálná data z pohybu robota/dronu (např. GPS data, odometrie, VIO). 
 
-*  **[Vicon ROS2 Bag z DRC uložiště](https://drive.google.com/file/d/1MF6iFzuq9PJtDL8rNpbJOpXDj5JGx6_0/view?usp=sharing)** 
+* **[Vicon ROS2 Bag z DRC uložiště](https://drive.google.com/file/d/1MF6iFzuq9PJtDL8rNpbJOpXDj5JGx6_0/view?usp=sharing)** 
 * *(Alternativa pro testování: Můžeš si stáhnout ukázkový VIO dataset z [EuRoC MAV Dataset](https://www.research-collection.ethz.ch/entities/researchdata/bcaf173e-5dac-484b-bc37-faf97a594f1f))
 
 ### 2. Extrakce dat do CSV (Napiš vlastní Node)
@@ -69,13 +69,11 @@ Tvým úkolem je doplnit šablonu v Pythonu (`node_template.py`), která se chov
 
 #### 📋 Seznam úkolů (TODO) v kódu:
 
-1. **Import zpráv:** Importuj správný typ zprávy podle topicu v datasetu (např. `PoseStamped` nebo `Odometry`).
-2. **Hlavička CSV:** Definuj názvy sloupců v CSV souboru (`timestamp`, `x`, `y`, `z`).
-3. **Subscriber:** Odkomentuj a nastav `self.create_subscription()` se správným typem zprávy a názvem topicu.
-4. **Timer:** Odkomentuj a nastav `self.create_timer()` na periodu `0.1` s (10 Hz).
-5. **Callback subscriberu (`pose_callback`):** Ukládej přijatou zprávu do proměnné `self.latest_msg`.
-6. **Callback timeru (`timer_callback`):** Extrahuj ze zprávy časové razítko a pozice X, Y, Z.
-7. **Zápis do CSV:** Zapiš extrahované hodnoty jako nový řádek do CSV souboru.
+1. **Hlavička CSV:** Definuj a zapiš názvy sloupců v CSV souboru (`timestamp`, `x`, `y`, `z`).
+2. **Subscriber:** Odkomentuj a nastav `self.create_subscription()` se správným typem zprávy a názvem topicu.
+3. **Timer:** Vytvoř a nastav timer (`self.create_timer()`) na periodu `0.1` s (10 Hz) a propoj jej s `self.timer_callback`.
+4. **Extrakce dat v timeru (`timer_callback`):** Extrahuj ze `self.latest_msg` časové razítko a souřadnice pozice X, Y, Z.
+5. **Zápis do CSV:** Zapiš extrahované hodnoty jako nový řádek do CSV souboru pomocí `self.writer.writerow([...])`.
 
 #### 🚀 Spuštění skriptu
 
