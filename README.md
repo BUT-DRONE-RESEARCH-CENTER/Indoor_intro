@@ -43,12 +43,22 @@ Pokud nemáš na počítači nativní Linux (dual-boot), doporučujeme využít 
 
 ## 📝 Zadání úkolu
 
+### 0. Připrav si Python environment a ROS2
+
+Prvně musíš zprovoznit základní Environment pro správně fungování Pythonu na PC. Python může běžet bez environmentu, ale zahltí (udělá tzv. polution) celkový systém a práce se tak stane neorganizovanou.
+
+https://docs.python.org/3/library/venv.html
+
+Dále musíš do tohoto environmentu přidat/nainstalovat balíčky pro ROS2 (v našem případě Humble verzi kompatibilní s Ubuntu 22.04).
+
+https://docs.ros.org/en/humble/Installation.html
+
 ### 1. Získej dataset (Rosbag)
 
 Stáhni si připravený dataset, který obsahuje reálná data z pohybu robota/dronu (např. GPS data, odometrie, VIO). 
 
-* 🔗 **[ZDE BUDE ODKAZ NA VÁŠ DRB/ROSBAG]** 
-* *(Alternativa pro testování: Můžeš si stáhnout ukázkový VIO dataset z [EuRoC MAV Dataset](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets))*
+* 🔗 **[Vicon ROS2 Bag z DRC uložiště](https://drive.google.com/file/d/1MF6iFzuq9PJtDL8rNpbJOpXDj5JGx6_0/view?usp=sharing)** 
+* *(Alternativa pro testování: Můžeš si stáhnout celý ukázkový VIO dataset z [EuRoC MAV Dataset](https://www.research-collection.ethz.ch/entities/researchdata/bcaf173e-5dac-484b-bc37-faf97a594f1f))*
 
 ### 2. Extrakce dat do CSV (Napiš vlastní Node)
 
