@@ -1,5 +1,9 @@
 # Vstupní úkol DRC: Zpracování a vizualizace senzorických dat v ROS 2
 
+---
+English version can be seen [HERE](https://github.com/BUT-DRONE-RESEARCH-CENTER/Indoor_intro/blob/main/README_EN.md)
+---
+
 Vítej u vstupního úkolu pro nováčky do DRC! Cílem tohoto úkolu je ověřit (nebo tě naučit) základy práce s Robot Operating System (ROS 2), který je naprostým standardem v moderní robotice. Vyzkoušíš si práci s nahranými daty (rosbag), vytvoření vlastního skriptu (node) a vizualizaci. 
 
 **Toto zadání včetně šablony kódu naleznete na** [GitHub - BUT-DRONE-RESEARCH-CENTER/Indoor_intro · GitHub](https://github.com/BUT-DRONE-RESEARCH-CENTER/Indoor_intro)
