@@ -6,29 +6,6 @@ Vítej u vstupního úkolu pro nováčky do DRC! Cílem tohoto úkolu je ověři
 
 ---
 
-## 🛠️ Co budeš potřebovat
-
-* **Nainstalovaný ROS 2** (např. Humble, Iron nebo Jazzy) na Linuxu (Ubuntu 22.04 / 24.04).
-* **RViz2** – vizualizační nástroj (součást balíčku `ros-<distro>-desktop`).
-* Znalost základů Pythonu.
-* Základní orientace v Linux terminálu.
-
----
-
-## ⚠️ Důležité: Načtení prostředí ROS 2 (Sourcing)
-
-Všimni si, že v každém **nově otevřeném terminálu** musíš nejprve načíst prostředí ROS 2. Bez toho ti systém nebude rozumět příkazům jako `ros2` nebo `rviz2` a Python nenajde knihovnu `rclpy`.
-
-Příkaz spustíš podle nainstalované verze (nahraď `<distro>` např. za `humble`):
-
-```bash
-source /opt/ros/<distro>/setup.bash
-```
-
-*(Tip: Pokud nechceš tento příkaz psát do každého nového okna terminálu, přidej si ho na konec souboru `~/.bashrc`.)*
-
----
-
 ## 💻 Běžíš na Windows? Není problém!
 
 Pokud nemáš na počítači nativní Linux (dual-boot), doporučujeme využít jednu z následujících variant:
@@ -39,7 +16,7 @@ Pokud nemáš na počítači nativní Linux (dual-boot), doporučujeme využít 
    
    * Ve Windows 11 funguje grafika (GUI) v WSL2 automaticky (WSLg), takže v něm bez problému spustíš i RViz2. Stačí si v příkazové řádce Windows zapnout WSL (`wsl --install -d Ubuntu-22.04`) a do něj nainstalovat ROS 2.
    
-   * **📁 Jak přenést soubory (rosbag, skript) do WSL?**  
+   * **📁 Jak přenést soubory jako rosbag (data z dronu) nebo template skriptu do WSL?**  
      V terminálu WSL se přesuň do složky, kam chceš soubory uložit, a zadej příkaz:
      
      ```bash
@@ -52,6 +29,15 @@ Pokud nemáš na počítači nativní Linux (dual-boot), doporučujeme využít 
    
    * Stáhni si [VirtualBox](https://www.virtualbox.org/) a nainstaluj si v něm **Ubuntu Desktop (22.04 LTS)**.
    * Nezapomeň virtuálce přidělit dostatek RAM (ideálně 4–8 GB), alespoň 2–4 jádra CPU a **zapnout 3D akceleraci** v nastavení grafiky, aby běžel RViz2 plynule.
+
+---
+
+## 🛠️ Co budeš potřebovat
+
+* **Nainstalovaný ROS 2** (např. Humble, Iron nebo Jazzy) na Linuxu (Ubuntu 22.04 / 24.04).
+* **RViz2** – vizualizační nástroj (součást balíčku `ros-<distro>-desktop`).
+* Znalost základů Pythonu.
+* Základní orientace v Linux terminálu.
 
 ---
 
@@ -86,6 +72,21 @@ Až budeš mít kód doplněný, nezapomeň si v terminálu nejprve načíst ROS
 source /opt/ros/<distro>/setup.bash
 python3 pose_logger_template.py
 ```
+
+⚠️ **Důležité: Načtení prostředí ROS 2 (Sourcing)**
+Všimni si, že v každém **nově otevřeném terminálu** musíš nejprve načíst prostředí ROS 2. Bez toho ti systém nebude rozumět příkazům jako `ros2` nebo `rviz2` a Python nenajde knihovnu `rclpy`.
+
+Příkaz spustíš podle nainstalované verze (nahraď `<distro>` např. za `humble`):
+
+```bash
+source /opt/ros/<distro>/setup.bash
+```
+
+*(Tip: Pokud nechceš tento příkaz psát do každého nového okna terminálu, přidej si ho na konec souboru `~/.bashrc`.)*
+
+---
+
+
 
 ### 3. Vizualizace v RViz2
 
