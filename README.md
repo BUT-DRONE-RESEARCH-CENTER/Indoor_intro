@@ -1,6 +1,5 @@
 # Vstupní úkol DRC: Zpracování a vizualizace senzorických dat v ROS 2
 
----
 English version can be seen [HERE](https://github.com/BUT-DRONE-RESEARCH-CENTER/Indoor_intro/blob/main/README_EN.md)
 ---
 
