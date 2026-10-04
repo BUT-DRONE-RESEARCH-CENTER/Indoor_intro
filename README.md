@@ -11,22 +11,22 @@ Vítej u vstupního úkolu pro nováčky do DRC! Cílem tohoto úkolu je ověři
 Pokud nemáš na počítači nativní Linux (dual-boot), doporučujeme využít jednu z následujících variant:
 
 1. **WSL 2 (Windows Subsystem for Linux)** – *Doporučeno pro výkon:*
-   
+
    * Vylepšený terminál ve Windows umožňující běžet Ubuntu přímo.
-   
+
    * Ve Windows 11 funguje grafika (GUI) v WSL2 automaticky (WSLg), takže v něm bez problému spustíš i RViz2. Stačí si v příkazové řádce Windows zapnout WSL (`wsl --install -d Ubuntu-22.04`) a do něj nainstalovat ROS 2.
-   
+
    * **📁 Jak přenést soubory jako rosbag (data z dronu) nebo template skriptu do WSL?**  
      V terminálu WSL se přesuň do složky, kam chceš soubory uložit, a zadej příkaz:
-     
+
      ```bash
      explorer.exe .
      ```
-     
+
      *(Tečka na konci je důležitá!)* Příkaz otevře klasické okno Průzkumníka z Windows propojené s Linuxem. Stačí do něj stažený soubor nebo šablonu jednoduše přetáhnout myší.
 
 2. **Virtuální stroj (VirtualBox / VMware)** – *Snadnější na nastavení:*
-   
+
    * Stáhni si [VirtualBox](https://www.virtualbox.org/) a nainstaluj si v něm **Ubuntu Desktop (22.04 LTS)**.
    * Nezapomeň virtuálce přidělit dostatek RAM (ideálně 4–8 GB), alespoň 2–4 jádra CPU a **zapnout 3D akceleraci** v nastavení grafiky, aby běžel RViz2 plynule.
 
@@ -43,7 +43,7 @@ Pokud nemáš na počítači nativní Linux (dual-boot), doporučujeme využít 
 
 ## 📝 Zadání úkolu
 
-### 0. Připrav si Python environment a ROS2
+## 0. Připrav si Python environment a ROS2
 
 Prvně musíš zprovoznit základní Environment pro správně fungování Pythonu na PC. Python může běžet bez environmentu, ale zahltí (udělá tzv. polution) celkový systém a práce se tak stane neorganizovanou.
 
@@ -57,12 +57,12 @@ https://docs.ros.org/en/humble/Installation.html
 
 Stáhni si připravený dataset, který obsahuje reálná data z pohybu robota/dronu (např. GPS data, odometrie, VIO). 
 
-* 🔗 **[Vicon ROS2 Bag z DRC uložiště](https://drive.google.com/file/d/1MF6iFzuq9PJtDL8rNpbJOpXDj5JGx6_0/view?usp=sharing)** 
-* *(Alternativa pro testování: Můžeš si stáhnout celý ukázkový VIO dataset z [EuRoC MAV Dataset](https://www.research-collection.ethz.ch/entities/researchdata/bcaf173e-5dac-484b-bc37-faf97a594f1f))*
+* https://drive.google.com/file/d/1MF6iFzuq9PJtDL8rNpbJOpXDj5JGx6_0/view?usp=sharing
+* *(Alternativa pro testování: Můžeš si stáhnout ukázkový VIO dataset z [EuRoC MAV Dataset](https://www.research-collection.ethz.ch/entities/researchdata/bcaf173e-5dac-484b-bc37-faf97a594f1f))
 
 ### 2. Extrakce dat do CSV (Napiš vlastní Node)
 
-Tvým úkolem je doplnit šablonu v Pythonu (`pose_logger_template.py`), která se chová jako ROS 2 node.
+Tvým úkolem je doplnit šablonu v Pythonu (`node_template.py`), která se chová jako ROS 2 node.
 
 #### 📋 Seznam úkolů (TODO) v kódu:
 
@@ -80,7 +80,7 @@ Až budeš mít kód doplněný, nezapomeň si v terminálu nejprve načíst ROS
 
 ```bash
 source /opt/ros/<distro>/setup.bash
-python3 pose_logger_template.py
+python3 node_template.py
 ```
 
 ⚠️ **Důležité: Načtení prostředí ROS 2 (Sourcing)**
@@ -95,8 +95,6 @@ source /opt/ros/<distro>/setup.bash
 *(Tip: Pokud nechceš tento příkaz psát do každého nového okna terminálu, přidej si ho na konec souboru `~/.bashrc`.)*
 
 ---
-
-
 
 ### 3. Vizualizace v RViz2
 
@@ -119,5 +117,6 @@ Až to budeš mít hotové, pošli nám:
 1. **Zdrojový kód** tvého skriptu (node), který data ukládal.
 2. **Vygenerovaný `.csv` soubor** s nasbíranými daty.
 3. **Screenshot nebo krátké video** z RVizu, kde je jasně vidět vykreslená trajektorie robota.
+4. **Screenshot informací ohledně datasetu** - jak je velký, jaký publikuje topics.
 
 Neboj se googlit a používat oficiální ROS 2 dokumentaci nebo fóra! Hodně štěstí a těšíme se na tvoje řešení.
